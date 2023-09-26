@@ -1,16 +1,16 @@
 :root{
-	--header-bg: #2b2b2b;
-	--container-bg1: #dddada;
-	--container-bg2: #dddada;
-	--gallery-bg1: #0b5155;
+	--header-bg: #0b4851;
+	--container-bg1: #DDE6ED;
+	--container-bg2: #8ECDDD;
+	--gallery-bg1: #22668D;
 	--image-bg1: #0b4851;
 	--image-bg2: #0b5155;
 	--bg-color1: #0b4851;
-	--bg-color2: #0b5155;
+	--bg-color2: #3b696c;
 	--bg-color3: #dddada;
 	--bg-color3-1: #eee;
 	--text-color1:#0b4851;
-	--text-color2: #333;
+	--text-color2: #2b2b2b;
 	--text-color3: #dddada;
 	
 }
@@ -30,7 +30,8 @@ header {
 	background-color: var(--header-bg);
 	color: var(--text-color3);
 	padding: 15px;
-	z-index: 999;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 1;
 }
 
 h1 {
@@ -73,9 +74,9 @@ nav ul li a{
 	border-width:0 0 4px 0;
 }
 nav ul li:not(.active):hover{
-	background: #676767;
 	transition: background-color 0.4s ease;
 	border-radius: 10px;
+	opacity: 0.5;
 }
 
 nav ul li:not(.active) a{
@@ -100,6 +101,18 @@ nav a {
 	padding: 50px;
 }
 
+.button{
+    position: fixed;
+    top: 35px;
+    right: 15px;
+    transform: translate(0, -50%);
+    margin-right: 10px;
+    float: right;
+    color: #fff;
+	z-index: 1;
+    visibility: hidden;
+}
+
 
 @media only screen and (max-width: 800px) {
 	header {
@@ -117,10 +130,78 @@ nav a {
 		margin-top: 7%;
 	}
 
+	.button{
+		visibility: visible;
+	}
+
 	.about {
 		padding: 30px;
 	}
 }
+
+.overlay {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: var(--bg-color1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	overflow-x: hidden;
+	transition: 0.5s;
+  }
+  
+  .overlay a {
+	display: flex;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 36px;
+	color: var(--text-color3);
+	transition: 0.3s;
+  }
+  
+  .overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	margin-top: 30px;
+  }
+  
+  .overlay-content a {
+	display: flex;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 36px;
+	color: var(--text-color3);
+	transition: 0.3s;
+  }
+  
+  .overlay a:not(.active):hover, .overlay a:focus {
+	color: var(--text-color3);
+	opacity: 0.5;
+  }
+  
+  .overlay .closebtn {
+	  display: block;
+	  position: relative;
+	  padding: 10px;
+	  margin-right: 10px;
+	  float: right;
+	  color: #fff;
+	  font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.overlay a {
+	font-size: 20px
+	}
+	.overlay .closebtn {
+	font-size: 40px;
+	top: 15px;
+	right: 35px;
+	}
+  }
 
 /*Home*/
 .home-container{
@@ -129,9 +210,10 @@ nav a {
     align-items: center;
 	flex-direction: column;
   	align-items: center;
-	padding: 10px 20px;
+	padding: 120px 20px;
 	background-color: var(--container-bg1);
 	margin: 0 30px;
+	/* height: 100vh; */
 }
 
 .banner-container{
@@ -141,16 +223,45 @@ nav a {
 	flex-wrap: wrap;
   	align-items: center;
 	padding: 20px 0;
+	z-index: 0;
+}
+
+.border{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	/*-ms-align-items: center;*/
+	align-items: center;
+	overflow: hidden;
+}
+
+.border::before{
+	content: '';
+	position: absolute;
+	width: 70%;
+	height: 140%;
+	background: linear-gradient(var(--bg-color1), var(--bg-color3));
+	animation: rotate 10s linear infinite;
+}
+
+.border::after{
+	content: '';
+	position: absolute;
+	background: var(--container-bg1);
+	border-radius: 50%;
+	inset: 3px;
 }
 
 .image-container{
 	align-items: center;
-	margin-top: 40px;
-	padding: 10px;
-	height: 300px;
-	width: 300px;
+	height: 290px;
+	width: 290px;
+	background: var(--image-bg1);
 	border-radius: 50%;
-	background-color: var(--image-bg1);
+	z-index: 2;
 	overflow: hidden;
 }
 
@@ -158,6 +269,15 @@ nav a {
 	display: block;
 	width: 300px; 
   	height: auto; 
+}
+
+@keyframes rotate {
+    from{
+    	transform: rotate(0deg);
+    }
+    to{
+    	transform: rotate(360deg);
+    }
 }
 
 .banner-text{
@@ -212,7 +332,7 @@ button::before {
 	border-radius: inherit;
 	scale: 0;
 	z-index: -1;
-	background-color: var(--bg-color3);
+	background-color: var(--container-bg1);
 	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
@@ -232,10 +352,11 @@ button:active {
     
 .portfolio-container{
 	margin: 0 30px;	
+	background-color: var(--container-bg2);	
 }
 .portfolio{
 	padding: 10px 250px;
-	background-color: var(--container-bg2);	
+	
 }
 
 .portfolio h2{
@@ -261,20 +382,20 @@ button:active {
 	padding: 0.25rem;
 	width: 300px;
 	font-size: 14px;
-  }
+}
   
-  .radio-inputs .radio {
+.radio-inputs .radio {
 	flex: 1 1 auto;
 	text-align: center;
 	align-items: center;
 	justify-items: center;
-  }
+}
   
-  .radio-inputs .radio input {
+.radio-inputs .radio input {
 	display: none;
-  }
+}
   
-  .radio-inputs .radio .name {
+.radio-inputs .radio .name {
 	display: flex;
 	cursor: pointer;
 	align-items: center;
@@ -284,14 +405,14 @@ button:active {
 	padding: .5rem 0;
 	color: var(--text-color1);
 	transition: all .15s ease-in-out;
-  }
+}
   
-  .radio-inputs .radio input:checked + .name {
+.radio-inputs .radio input:checked + .name {
 	background-color: var(--bg-color1);
 	color: var(--text-color3);
 	font-weight: 600;
 	
-  }
+}
 
 
 .gallery-container{
@@ -316,13 +437,12 @@ button:active {
 	overflow: hidden;
 	position: relative;
 	color: var(--text-color2);
-	border: 2px solid var(--bg-color1);
 	transition: all .5s ease;
 	padding: 5px 10px;
 	margin: 20px 5px;
   }
   
-  .image {
+.image {
 	display: flex;
 	width: 160px;
 	height: 130px;
@@ -334,48 +454,101 @@ button:active {
 }
 
 .image img{
-	width: auto;
-	height: 100px; 
+	width: 100%;
+	height: auto; 
 	align-content: center;
 	border-radius: 15%;
 	padding: 10px 20px;
+	object-fit: cover;
 }
   
-  .image__info {
+.image__info {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 	justify-content: center;
 	padding: 15px;
 	gap: 3px;
-  }
+}
 
-  .title {
+.title {
 	font-weight: 600;
 	font-size: 17px;
-	color: black;
+	color: var(--text-color1);
   }
   
-  .content {
+.content {
 	font-size: 14px;
-  }
+	color: var(--text-color1);
+}
   
-  .gallery:hover {
+.gallery:hover {
 	box-shadow: 5px 5px 10px 0px var(--bg-color1);
-  }
+}
   
-  .gallery:hover .image {
+.gallery:hover .image {
 	filter: brightness(.8);
-  }
+	cursor: pointer;
+}
   
-  .gallery:hover .title {
+.gallery:hover .title {
 	color: #0d627b;
-  }
+}
+
+#full-image-container {
+    display: none;
+    position: fixed;
+	align-items: center;
+	justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.full-image-container{
+	display: flex;
+	position: fixed;
+    width: auto;
+    height: auto;
+	margin: 20%;
+}
+
+#full-image {
+	display: flex;
+	color: var(--text-color3);
+	align-self: center;
+	position: relative;
+	max-width: 600px;
+	max-height: 600px;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#close-button {
+	position: absolute;
+	font-family: "Courier New", monospace;
+	top: 0;
+	right: 0;
+	color: #dddada;
+    cursor: pointer;
+	font-size: 60px;
+	font-weight: 500;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+	opacity: 0.5;
+}
+
+#close-button:hover{
+	color: #dddada;
+	border-radius: 0 0 0 10px;
+	opacity: 1;
+}
 
   @media only screen and (max-width: 800px) {
 	.portfolio{
 		padding: 10px 20px;
-		background-color: var(--bg-color3);	
+		background-color: var(--container-bg2);	
 	}
 	
 	.gallery {
@@ -389,7 +562,6 @@ button:active {
 		overflow: hidden;
 		position: relative;
 		color: var(--text-color2);
-		border: 2px solid var(--bg-color1);
 		transition: all .5s ease;
 		padding: 10px 5px;
 		margin: 20px 10px;
