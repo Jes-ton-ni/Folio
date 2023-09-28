@@ -210,7 +210,7 @@ nav a {
     align-items: center;
 	flex-direction: column;
   	align-items: center;
-	padding: 120px 20px;
+	padding: 110px 20px;
 	background-color: var(--container-bg1);
 	margin: 0 30px;
 	/* height: 100vh; */
@@ -222,6 +222,7 @@ nav a {
     align-items: center;
 	flex-wrap: wrap;
   	align-items: center;
+	margin: 20px;
 	padding: 20px 0;
 	z-index: 0;
 }
@@ -236,6 +237,7 @@ nav a {
 	/*-ms-align-items: center;*/
 	align-items: center;
 	overflow: hidden;
+	padding: 10px;
 }
 
 .border::before{
@@ -271,6 +273,20 @@ nav a {
   	height: auto; 
 }
 
+.banner-text-container{
+	padding: 20px 40px;
+	margin: 20px 90px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.banner-text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
 @keyframes rotate {
     from{
     	transform: rotate(0deg);
@@ -304,7 +320,8 @@ nav a {
 
 .button-container{
 	display: grid;
-	padding: 10px 20px;
+	margin: 20px 10px;
+	padding: 10px;
 	justify-items: center;
 }
 
@@ -603,18 +620,32 @@ button:active {
 	  }
 }
 
+.contact-container{
+	display: flex;
+	/* max-width: 50%; */
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg-color3);
+	padding: 20px 40px;
+}
+
   .form-container {
 	display: flex;
-	max-width: 80%;
-	margin: 90px;
+	max-width: 50%;
+	max-height: auto;
 	background-color: var(--bg-color1);
 	padding: 20px 40px;
 	border-left: 5px solid var(--bg-color3);
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   }
 
-  .form, .map{
-	padding:0 20px 0 0;
+  .map{
+	height: inherit;
+  }
+
+  .form{
+	border: 1px solid #0b4851;
+	padding: 10px 20px;
 	background-color: var(--bg-color2);
   }
 
