@@ -449,7 +449,7 @@ button:active {
 	justify-content: center;
 	max-width: 25%;
 	max-height: 30%;
-	height: 350px;
+	height: 280px;
 	background: var(--bg-color3-1);
 	/* border-radius: 15px; */
 	overflow: hidden;
@@ -485,6 +485,8 @@ button:active {
 	flex-direction: column;
 	flex-grow: 1;
 	justify-content: center;
+	height: calc(3 * 1.2em); /* 1.2em is the approximate line-height value */
+	overflow: hidden;
 	padding: 15px;
 	gap: 3px;
 }
@@ -497,6 +499,14 @@ button:active {
   
 .content {
 	font-size: 14px;
+	margin: 0; /* Remove default margin */
+	padding: 0; /* Remove default padding */
+	line-height: 1.2em; /* Set the line-height to match the container */
+	display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to three lines */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 	color: var(--text-color1);
 }
   
@@ -623,7 +633,7 @@ button:active {
 
 .contact-container{
 	display: flex;
-	/* max-width: 50%; */
+	max-width: 90%;
 	align-items: center;
 	justify-content: center;
 	background-color: var(--bg-color3);
@@ -632,7 +642,7 @@ button:active {
 
   .form-container {
 	display: flex;
-	max-width: 50%;
+	max-width: 90%;
 	max-height: auto;
 	background-color: var(--bg-color1);
 	padding: 20px 40px;
@@ -641,11 +651,13 @@ button:active {
   }
 
   .map{
+	width: 100%;
 	height: inherit;
   }
 
   .form{
 	border: 1px solid #0b4851;
+	width: 100%;
 	padding: 10px 20px;
 	background-color: var(--bg-color2);
   }
