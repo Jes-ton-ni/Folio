@@ -372,7 +372,7 @@ button:active {
 	background-color: var(--container-bg2);	
 }
 .portfolio{
-	padding: 10px 250px;
+	padding: 5% 10%;
 	
 }
 
@@ -447,26 +447,27 @@ button:active {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 200px;
+	max-width: 25%;
+	max-height: 30%;
 	height: 350px;
 	background: var(--bg-color3-1);
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	overflow: hidden;
 	position: relative;
 	color: var(--text-color2);
 	transition: all .5s ease;
 	padding: 5px 10px;
-	margin: 20px 5px;
+	margin: 2% 2%;
   }
   
 .image {
 	display: flex;
-	width: 160px;
+	width: inherit;
 	height: 130px;
-	border-radius: 15px;
+	/* border-radius: 10%; */
 	justify-content: center;
 	background-color: var(--image-bg2);
-	padding: 0px 20px;
+	padding: 5px 10px;
 	overflow: hidden;
 }
 
@@ -474,8 +475,8 @@ button:active {
 	width: 100%;
 	height: auto; 
 	align-content: center;
-	border-radius: 15%;
-	padding: 10px 20px;
+	/* border-radius: 10%; */
+	/* padding: 10px 20px; */
 	object-fit: cover;
 }
   
