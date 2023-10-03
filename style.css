@@ -325,7 +325,7 @@ nav a {
 	justify-items: center;
 }
 
-button {
+.home-button {
 	cursor: pointer;
 	position: relative;
 	padding: 15px 40px;
@@ -339,7 +339,7 @@ button {
 	overflow: hidden;
   }
   
-button::before {
+.home-button::before {
 	content: '';
 	position: absolute;
 	inset: 0;
@@ -353,17 +353,17 @@ button::before {
 	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-button:hover::before {
+.home-button:hover::before {
 	scale: 3;
 }
 
-button:hover {
+.home-button:hover {
 	color: var(--text-color1);
 	scale: 1.1;
 	box-shadow: 0 0px 10px var(--bg-color1);
 }
 
-button:active {
+.home-button:active {
 	scale: 1;
 }
     
@@ -436,9 +436,8 @@ button:active {
 	display: none;
     justify-content: center;
 	align-content: center;
-    align-items: center;
+    align-items: flex-start;
 	flex-wrap: wrap;
-  	align-items: center;
 	background-color: var(--gallery-bg1);
 	border-radius: 15px;
 }
@@ -449,7 +448,7 @@ button:active {
 	justify-content: center;
 	max-width: 25%;
 	max-height: 30%;
-	height: 280px;
+	height: auto;
 	background: var(--bg-color3-1);
 	/* border-radius: 15px; */
 	overflow: hidden;
@@ -485,26 +484,27 @@ button:active {
 	flex-direction: column;
 	flex-grow: 1;
 	justify-content: center;
-	height: calc(3 * 1.2em); /* 1.2em is the approximate line-height value */
+	height: calc(6 * 1.2em); /* 1.2em is the approximate line-height value */
+	/* height: auto; */
 	overflow: hidden;
 	padding: 15px;
 	gap: 3px;
 }
 
 .title {
-	font-weight: 600;
+	font-weight: 750;
 	font-size: 17px;
+	line-height: 1.2em;
+	/* height: auto; */
 	color: var(--text-color1);
   }
   
 .content {
-	font-size: 14px;
+	font-size: 17px;
 	margin: 0; /* Remove default margin */
 	padding: 0; /* Remove default padding */
 	line-height: 1.2em; /* Set the line-height to match the container */
-	display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to three lines */
-    -webkit-box-orient: vertical;
+	
     text-overflow: ellipsis;
     overflow: hidden;
 	color: var(--text-color1);
@@ -637,6 +637,7 @@ button:active {
 	align-items: center;
 	justify-content: center;
 	background-color: var(--bg-color3);
+	margin: 80px 20px;
 	padding: 20px 40px;
 }
 
