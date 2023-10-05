@@ -11,8 +11,7 @@
 	--bg-color3-1: #eee;
 	--text-color1:#0b4851;
 	--text-color2: #2b2b2b;
-	--text-color3: #dddada;
-	
+	--text-color3: #dddada; 	
 }
 
 body {	
@@ -95,6 +94,10 @@ nav li:last-child {
 nav a {
 	color: var(--text-color3);
 	text-decoration: none;
+}
+
+.menu a:target{
+	display: none;
 }
 
 .about {
@@ -369,6 +372,7 @@ nav a {
     
 .portfolio-container{
 	margin: 0 30px;	
+	padding: 110px 20px;
 	background-color: var(--container-bg2);	
 }
 .portfolio{
@@ -497,6 +501,7 @@ nav a {
 	line-height: 1.2em;
 	/* height: auto; */
 	color: var(--text-color1);
+	
   }
   
 .content {
@@ -637,7 +642,7 @@ nav a {
 	align-items: center;
 	justify-content: center;
 	background-color: var(--bg-color3);
-	margin: 80px 20px;
+	margin: 0 30px;	
 	padding: 20px 40px;
 }
 
@@ -646,6 +651,7 @@ nav a {
 	max-width: 90%;
 	max-height: auto;
 	background-color: var(--bg-color1);
+	margin: 80px 20px;
 	padding: 20px 40px;
 	border-left: 5px solid var(--bg-color3);
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
