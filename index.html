@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Banner</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -11,7 +11,7 @@
     <nav class="navbar">
         <ul>
             <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="#">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -24,7 +24,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
             <a class="active" href="index.html">Home</a>
-            <a href="#">Projects</a>
+            <a href="gallery.html">Gallery</a>
             <a href="#">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -55,133 +55,7 @@
     </div>
     
 </div>
-<div class="portfolio-container">
-    <div id="image" class="portfolio">
-        <h2>My Portfolio</h2>
 
-        <div class="radio-inputs">
-            <label class="radio">
-                <input type="radio" name="visibility" value="Project" checked>
-                <span class="name">Project</span>
-            </label>
-            <label class="radio">
-                <input type="radio" name="visibility" value="Hobby">
-                <span class="name">Hobby</span>
-            </label>
-                
-            <label class="radio">
-                <input type="radio" name="visibility" value="Photo">
-                <span class="name">Photo</span>
-            </label>
-        </div>
-
-        <div id="Project" class="gallery-container">
-            <div class="gallery">
-                <div class="image">
-                    <img src="projects/proj1.png" alt="Poject1" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">CornHub</p>
-                    <p class="content">This is a group project. We are 3 in the group that help to make this website. This site is all about corn.</p>
-                </div>
-            </div>
-            
-            <div class="gallery">
-                <div class="image">
-                    <img src="projects/proj2.jpeg" alt="Project2" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">CamShot</p>
-                    <p class="content">This is also a group project with 3 members. It is an inventory program. The programming language that we used to build this program is java program.</p>        
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="image">
-                    <img src="projects/proj3.png" alt="Project3" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Calculator</p>
-                    <p class="content">It is a simple calculator that can solve a simple math problem. This calculator uses EMDAS to solve math problem.</p>
-                </div>
-            </div>
-        
-        </div>
-
-        <div id="Hobby" class="gallery-container">
-            <div class="gallery">
-                <div class="image">
-                        <img src="hobby/hobby1.jpg" alt="Hobby1" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Hobby1</p>
-                    <p class="content">Ito po ang una kong hobby.</p>
-                </div>
-            </div>
-            
-            <div class="gallery">
-                <div class="image">
-                        <img src="hobby/hobby2.jpg" alt="Hobby2" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Hobby2</p>
-                    <p class="content">Ito po ang pangalawa kong hobby.</p>
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="image">
-                        <img src="hobby/hobby3.jpg" alt="Hobby3" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Hobby3</p>
-                    <p class="content">Ito po ang pangatlo kong hobby</p>
-                </div>
-            </div>
-        
-        </div>
-
-        <div id="Photo" class="gallery-container">
-            <div class="gallery">
-                <div class="image">
-                        <img src="photo/photo1.jpg" alt="photo1" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Photo1</p>
-                    <p class="content">Ito po yung unang picture.</p>
-                </div>
-            </div>
-            
-            <div class="gallery">
-                <div class="image">
-                        <img src="photo/photo2.jpg" alt="photo2" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Photo2</p>
-                    <p class="content">Ito po yung pangalawang picture.</p>
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="image">
-                        <img src="photo/photo3.jpeg" alt="photo3" width="100%" height="100%">
-                </div>
-                <div class="image__info">
-                    <p class="title">Photo3</p>
-                    <p class="content">Ito po yung pangatlong picture.</p>
-                </div>
-            </div>
-            
-        </div>
-
-        
-    </div>   
-        <div id="full-image-container" hidden>
-            <div class="full-image-container">
-                <img id="full-image" src="" alt="This is the full size of the selected image">
-                <span class="close-button" id="close-button">&times;</span>
-            </div>
-        </div>
-    <script src="overlay.js"></script> <!-- Link to external JavaScript file -->
-    <script src="hide.js"></script>
-    <script src="readmore.js"></script>
 </div>
 </body>
 </html>
