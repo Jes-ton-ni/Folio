@@ -276,6 +276,15 @@ nav a {
   	height: auto; 
 }
 
+@keyframes rotate {
+    from{
+    	transform: rotate(0deg);
+    }
+    to{
+    	transform: rotate(360deg);
+    }
+}
+
 .banner-text-container{
 	padding: 20px 40px;
 	margin: 20px 90px;
@@ -286,20 +295,6 @@ nav a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-
-
-@keyframes rotate {
-    from{
-    	transform: rotate(0deg);
-    }
-    to{
-    	transform: rotate(360deg);
-    }
-}
-
-.banner-text{
 	padding: 10px 20px;
 }
 
@@ -660,6 +655,7 @@ nav a {
 .about_container .label{
 	display: block;
 }
+
 .about_container .label h1{
 	text-align: center;
 	color: var(--text-color1);
@@ -680,51 +676,48 @@ nav a {
 	flex-wrap: wrap;
   	align-items: center;
 	margin: 20px;
-	padding: 20px 0;
+	padding: 40px 20px;
 }
 
-.about .about_contents{
+.about .about_image_container{
 	display: flex;
+	width: 250px;
 	justify-content: center;
 	align-items: center;
-	flex-wrap	: wrap;
-  	align-items: center;
-	padding: 10px;
+	flex-wrap: wrap;
 }
 
-.about .image, .about .infoSection{
-	margin-top: 40px;
-}
-
-.about img{
-	align-items: center;
-	padding: 10px;
-}
-
-.about .infoSection{
-	margin-top: -30px;
-	margin-bottom: 20px;
-}
-
-.about .image{
-	display: block;
-	margin-top: 60px;
-	margin-right: 30px;
+.about .about_image_container .image{
+	display: flex;
 	border:solid;
 	border-color: var(--bg-color2);
-	padding: 5px;
 }
 
-.about .image img{
-	padding: 5px;
-	width: 200px; 
+.about .about_image_container .image img{
+	align-items: center;
+	padding: 15px;
+	width: 250px; 
   	height: auto; 
-  	margin-top: -25px;
-	margin-left: -25px;
+  	margin-top: -30px;
+	margin-left: -30px;
 	
 }
 
-.infoSection h2{
+.about .info_container{
+	width: 700px;
+	padding: 20px 40px;
+	margin: 20px 60px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.about .info_container .infoSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px 20px;
+}
+
+.about .info_container .infoSection h2{
 	font-family: helvetica;
 	font-size: 28px;
 	font-weight: 600;
@@ -734,12 +727,12 @@ nav a {
 	letter-spacing: 1px;
 }
 
-.infoSection p{
+.about .info_container .infoSection p{
 	color: var(--text-color1);
 	font-size: 24px;
 	line-height: 1.2;
 	text-align: justify;
-	padding-bottom:8px;
+	padding-bottom: 8px;
 }
 
 
