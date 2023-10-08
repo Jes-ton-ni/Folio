@@ -733,7 +733,7 @@ nav a {
 }
 
 .about .info_container{
-	width: 700px;
+	max-width: 100%;
 	padding: 20px 40px;
 	margin: 20px 60px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
@@ -766,15 +766,25 @@ nav a {
 
 
 .personalInfo{
-	display: grid;
-	grid-template-columns: 2fr 2fr;
-	grid-gap: 10px 10px;
+	display: flex;
+    flex-wrap: wrap;
 	margin-top: 14px;
 	padding: 25px;
 	border-top: 2px solid var(--bg-color2);
 }
 
-.personalInfo p{
+.personalInfo .row{
+	flex: 100%; /* Each row takes up an equal amount of vertical space */
+    display: flex;
+    justify-content: space-between; /* Distribute columns evenly horizontally */
+    margin-bottom: 10px; /* Add margin between rows for spacing */
+}
+
+.personalInfo .column{
+	flex: 1; 
+}
+
+.personalInfo .column p{
 	color: var(--text-color1);
 	font-size: 24px;
 	letter-spacing: 1px;
