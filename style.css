@@ -439,6 +439,7 @@ nav a {
 	align-content: center;
     align-items: flex-start;
 	flex-wrap: wrap;
+	height: auto;
 	background-color: var(--gallery-bg1);
 	border-radius: 15px;
 }
@@ -448,11 +449,9 @@ nav a {
 	flex-direction: column;
 	justify-content: center;
 	max-width: 25%;
-	max-height: 30%;
 	height: auto;
 	background: var(--bg-color3-1);
 	/* border-radius: 15px; */
-	overflow: hidden;
 	position: relative;
 	color: var(--text-color2);
 	transition: all .5s ease;
@@ -477,17 +476,15 @@ nav a {
 	align-content: center;
 	/* border-radius: 10%; */
 	/* padding: 10px 20px; */
-	transition: transform 0.4s;
+	transition: 0.4s;
 	object-fit: cover;
 }
   
 .gallery .image__info {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	justify-content: center;
-	height: calc(6 * 1.2em); /* 1.2em is the approximate line-height value */
-	/* height: auto; */
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* flex-grow: 1; */
+	/* justify-content: center; */
 	overflow: hidden;
 	padding: 15px;
 	gap: 3px;
@@ -497,21 +494,25 @@ nav a {
 	font-weight: 750;
 	font-size: 17px;
 	line-height: 1.2em;
-	/* height: auto; */
-	color: var(--text-color1);
-	
-  }
-  
-.gallery .image__info .content {
-	font-size: 17px;
-	margin: 0; /* Remove default margin */
-	padding: 0; /* Remove default padding */
-	line-height: 1.2em; /* Set the line-height to match the container */
-    text-overflow: ellipsis;
-    overflow: hidden;
+	height: auto;
 	color: var(--text-color1);
 }
   
+.gallery .image__info .content{
+	font-size: 17px;
+	margin: 0; /* Remove default margin */
+	padding: 0; /* Remove default padding */
+	color: var(--text-color1);
+}
+
+.gallery .image__info .content p{
+	overflow: hidden;
+	line-height: 1.2em; /* Set the line-height to match the container */
+	height: calc(3*1.2em);
+	white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .gallery:hover {
 	box-shadow: 5px 5px 10px 0px var(--bg-color1);
 }
@@ -532,6 +533,18 @@ nav a {
 .gallery:hover .image__info .title {
 	color: #0d627b;
 	
+}
+
+.gallery .image__info .content:hover{
+	cursor: pointer;
+	height: auto;
+}
+
+.gallery .image__info .content p:hover{
+	cursor: pointer;
+	white-space: wrap;
+	min-height: calc(3*1.2em);
+	height: auto;
 }
 
 #full-image-container {
