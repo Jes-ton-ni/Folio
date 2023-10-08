@@ -538,12 +538,14 @@ nav a {
 .gallery .image__info .content:hover{
 	cursor: pointer;
 	height: auto;
+	white-space: wrap;
 }
 
 .gallery .image__info .content p:hover{
 	cursor: pointer;
 	white-space: wrap;
 	min-height: calc(3*1.2em);
+	text-overflow: inherit;
 	height: auto;
 }
 
@@ -597,7 +599,7 @@ nav a {
 	opacity: 1;
 }
 
-  @media only screen and (max-width: 800px) {
+  /* @media only screen and (max-width: 800px) {
 	.portfolio{
 		padding: 10px 20px;
 		background-color: var(--container-bg2);	
@@ -653,7 +655,19 @@ nav a {
 	  .gallery .image .content {
 		font-size: 8px;
 	  }
-}
+
+	  .gallery .image__info .content:hover{
+		cursor: pointer;
+		height: auto;
+	}
+	
+	.gallery .image__info .content p:hover{
+		cursor: pointer;
+		white-space: wrap;
+		min-height: calc(3*1.2em);
+		height: auto;
+	}
+} */
 
 .about_container{
 	display: flex;
