@@ -1,136 +1,1103 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-<header>
-    <h1>Jestoni Vargas</h1>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li class="active"><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>   
-<div class="button" style="font-size:30px;cursor:pointer" onclick="openNav()">
-    &#9776;
-</div>
-<div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a class="active" href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</div>
+:root{
+	--header-bg: #0b4851;
+	--container-bg1: #DDE6ED;
+	--container-bg2: #8ECDDD;
+	--gallery-bg1: #22668D;
+	--image-bg1: #0b4851;
+	--image-bg2: #0b5155;
+	--bg-color1: #0b4851;
+	--bg-color2: #3b696c;
+	--bg-color3: #dddada;
+	--bg-color3-1: #eee;
+	--text-color1:#0b4851;
+	--text-color2: #2b2b2b;
+	--text-color3: #dddada; 	
+}
 
-<div class="about_container">
-    <div class="label">
-        <h1>About Me</h1>
-    </div>
+body {	
+    background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: var(--header-bg);
+	color: var(--text-color3);
+	padding: 15px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+h1 {
+	margin: 0;
+	padding: 0 15px;
+}
+
+h2 {
+	margin-top: 30px;
+	text-align: center;
+}
+
+nav ul {
+	margin: -30px 28px;
+	padding: 0;
+	float: right;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	padding: 20px 2px;
+	margin-top: -20px;
+	margin-right: 20px;
+}
+
+nav ul li a{
+	color: var(--text-color3);
+	font-size: 18px;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	margin: 0;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.active{
+	color: var(--text-color3);
+	border: solid;
+	border-width:0 0 4px 0;
+}
+nav ul li:not(.active):hover{
+	transition: background-color 0.4s ease;
+	border-radius: 10px;
+	opacity: 0.5;
+}
+
+nav ul li:not(.active) a{
+	opacity: 0.7;
+	transition: color 0.9s ease;
+}
+
+nav ul li.active:hover{
+	color:inherit;
+}
+
+nav li:last-child {
+	margin-right: 0;
+}
+
+nav a {
+	color: var(--text-color3);
+	text-decoration: none;
+}
+
+.menu a:target{
+	display: none;
+}
+
+.about {
+	padding: 50px;
+}
+
+.button{
+    position: fixed;
+    top: 35px;
+    right: 15px;
+    transform: translate(0, -50%);
+    margin-right: 10px;
+    float: right;
+    color: #fff;
+	z-index: 1;
+    visibility: hidden;
+}
+
+
+@media only screen and (max-width: 800px) {
+	header {
+		padding: 10px;
+		margin: 0;
+		height: 8%;
+	}
+
+	nav li {
+		display: block;
+		visibility: hidden;
+	}
+
+	h2 {
+		margin-top: 7%;
+	}
+
+	.button{
+		visibility: visible;
+	}
+
+	.about {
+		padding: 30px;
+	}
+}
+
+.overlay {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: var(--bg-color1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	overflow-x: hidden;
+	transition: 0.5s;
+  }
+  
+  .overlay a {
+	display: flex;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 36px;
+	color: var(--text-color3);
+	transition: 0.3s;
+  }
+  
+  .overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	margin-top: 30px;
+  }
+  
+  .overlay-content a {
+	display: flex;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 36px;
+	color: var(--text-color3);
+	transition: 0.3s;
+  }
+  
+  .overlay a:not(.active):hover, .overlay a:focus {
+	color: var(--text-color3);
+	opacity: 0.5;
+  }
+  
+  .overlay .closebtn {
+	  display: block;
+	  position: relative;
+	  padding: 10px;
+	  margin-right: 10px;
+	  float: right;
+	  color: #fff;
+	  font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+	.overlay a {
+	font-size: 20px
+	}
+	.overlay .closebtn {
+	font-size: 40px;
+	top: 15px;
+	right: 35px;
+	}
+  }
+
+/*Home*/
+.home-container{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+  	align-items: center;
+	padding: 110px 20px;
+	background-color: var(--container-bg1);
+	margin: 0 30px;
+	/* height: 100vh; */
+}
+
+.banner-container{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-wrap: wrap;
+  	align-items: center;
+	margin: 20px;
+	padding: 20px 0;
+	z-index: 0;
+}
+
+.border{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	/*-ms-align-items: center;*/
+	align-items: center;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.border::before{
+	content: '';
+	position: absolute;
+	width: 70%;
+	height: 140%;
+	background: linear-gradient(var(--bg-color1), var(--bg-color3));
+	animation: rotate 10s linear infinite;
+}
+
+.border::after{
+	content: '';
+	position: absolute;
+	background: var(--container-bg1);
+	border-radius: 50%;
+	inset: 3px;
+}
+
+.image-container{
+	align-items: center;
+	height: 290px;
+	width: 290px;
+	background: var(--image-bg1);
+	border-radius: 50%;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.image-container img{
+	display: block;
+	width: 300px; 
+  	height: auto; 
+}
+
+@keyframes rotate {
+    from{
+    	transform: rotate(0deg);
+    }
+    to{
+    	transform: rotate(360deg);
+    }
+}
+
+.banner-text-container{
+	padding: 20px 40px;
+	margin: 20px 90px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.banner-text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px 20px;
+}
+
+.banner-text h1{
+    color: var(--text-color1);
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: -30px;
+}
+
+.banner-text p{
+	flex-direction: column;
+	white-space: pre-line;
+	width: 100%;
+	color: var(--text-color1);
+    font-size: 22px;
+    line-height: 1.5;
+	text-align: center;
+	/* margin-bottom: -10px; */
+}
+
+.button-container{
+	display: grid;
+	margin: 20px 10px;
+	padding: 10px;
+	justify-items: center;
+}
+
+.home-button {
+	cursor: pointer;
+	position: relative;
+	padding: 15px 40px;
+	font-size: 18px;
+	color: var(--bg-color3);
+	border: 2px solid var(--text-color1);
+	border-radius: 34px;
+	background-color: var(--bg-color1);
+	font-weight: 600;
+	transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+	overflow: hidden;
+  }
+  
+.home-button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	scale: 0;
+	z-index: -1;
+	background-color: var(--container-bg1);
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.home-button:hover::before {
+	scale: 3;
+}
+
+.home-button:hover {
+	color: var(--text-color1);
+	scale: 1.1;
+	box-shadow: 0 0px 10px var(--bg-color1);
+}
+
+.home-button:active {
+	scale: 1;
+}
     
-    <div class="about">
-        <div class="about_image_container">
-            <div class="image">
-                <div class="img-size">
-                    <img src="jes.jpg">
-                </div>
-                
-            </div>
-        </div>
-        
-        <div class="info_container">
-            <div class="infoSection">
-                <h2>BSIT Student</h2>
-                <p>I am an IT student at Bicol University College of Science having a passion to be a professional someday.</p>
-            </div>
-        </div>
+.portfolio-container{
+	margin: 0 30px;	
+	padding: 110px 20px;
+	background-color: var(--container-bg2);	
+	
+}
+.portfolio{
+	padding: 5% 10%;
+	
+}
 
-    </div> 
-    
-    <h2>Personal Information</h2>
-    <div class="personalInfo">
-        <p>Name:</p>
-        <p>Jestoni Vargas</p>
-    
-        <p>Age:</p>
-        <p>21</p>
-    
-        <p>Email:</p>
-        <p>jestoniuno.vargas@bicol-u.edu.ph</p>
-    
-        <p>Address:</p>
-        <p>Miti, Camalig, Albay</p>
-        
-    </div>
+.portfolio h2{
+	color: var(--text-color1);
+	background-color: var(--bg-color3-1);
+	box-sizing: border-box;
+	box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+	padding: 10px 20px;
+}
 
-    <h2>Educational Background</h2>
-    <div class="edu-bg-container">
-        <div class="edu-bg">
+.radio-inputs {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+    align-items: center;
+	flex-wrap: wrap;
+  	align-items: center;
+	border-radius: 0.5rem;
+	background-color: var(--bg-color3-1);
+	box-sizing: border-box;
+	box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+	padding: 0.25rem;
+	width: 300px;
+	font-size: 14px;
+	margin: 15px 0;
+}
+  
+.radio-inputs .radio {
+	flex: 1 1 auto;
+	text-align: center;
+	align-items: center;
+	justify-items: center;
+}
+  
+.radio-inputs .radio input {
+	display: none;
+}
+  
+.radio-inputs .radio .name {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem;
+	border: none;
+	padding: .5rem 0;
+	color: var(--text-color1);
+	transition: all .15s ease-in-out;
+}
+  
+.radio-inputs .radio input:checked + .name {
+	background-color: var(--bg-color1);
+	color: var(--text-color3);
+	font-weight: 600;
+	
+}
 
-        </div>
 
-    </div>
-    <h2>My Skills</h2>
-    <div class="skills-container">
-        <div class="skill-box">
-            <span class="title">HTML</span>
+.gallery-container{
+	display: none;
+    justify-content: center;
+	align-content: center;
+    align-items: flex-start;
+	flex-wrap: wrap;
+	height: auto;
+	background-color: var(--gallery-bg1);
+	border-radius: 15px;
+}
 
-            <div class="skill-bar">
-                <span class="skill-per html">
-                    <span class="tooltip">80%</span>
-                </span>
-            </div>
-        </div>
+.gallery {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 25%;
+	height: auto;
+	background: var(--bg-color3-1);
+	/* border-radius: 15px; */
+	position: relative;
+	color: var(--text-color2);
+	transition: all .5s ease;
+	padding: 5px 10px;
+	margin: 2% 2%;
+  }
+  
+.gallery .image {
+	display: flex;
+	width: inherit;
+	height: 130px;
+	/* border-radius: 10%; */
+	justify-content: center;
+	background-color: var(--image-bg2);
+	padding: 5px 10px;
+	overflow: hidden;
+}
 
-        <div class="skill-box">
-            <span class="title">CSS</span>
+.gallery .image img{
+	width: 100%;
+	height: auto; 
+	align-content: center;
+	/* border-radius: 10%; */
+	/* padding: 10px 20px; */
+	transition: 0.4s;
+	object-fit: cover;
+}
+  
+.gallery .image__info {
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* flex-grow: 1; */
+	/* justify-content: center; */
+	overflow: hidden;
+	padding: 15px;
+	gap: 3px;
+}
 
-            <div class="skill-bar">
-                <span class="skill-per css">
-                    <span class="tooltip">60%</span>
-                </span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <span class="title">JavaScript</span>
+.gallery .image__info .title {
+	font-weight: 750;
+	font-size: 17px;
+	line-height: 1.2em;
+	height: auto;
+	color: var(--text-color1);
+}
+  
+.gallery .image__info .content{
+	font-size: 17px;
+	margin: 0; /* Remove default margin */
+	padding: 0; /* Remove default padding */
+	color: var(--text-color1);
+}
 
-            <div class="skill-bar">
-                <span class="skill-per javascript">
-                    <span class="tooltip">30%</span>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+.gallery .image__info .content p{
+	overflow: hidden;
+	line-height: 1.2em; /* Set the line-height to match the container */
+	height: calc(3*1.2em);
+	white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
-<footer>
-    <div class="social-media">
-        <a class="socialContainer containerOne" href="https://instagram.com/jes_vrgs?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
-          <svg viewBox="0 0 16 16" class="socialSvg instagramSvg"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
-        </a>
-        
-        <a class="socialContainer containerTwo" href="https://github.com/Jes-ton-ni/" target="_blank">
-        <svg viewBox="0 0 496 512" class="socialSvg githubSvg" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-            </path>
-            </svg>
-        </a>
-          
-        <a class="socialContainer containerThree" href="https://www.facebook.com/seriousjoker.23" target="_blank">
-            <svg viewBox="0 0 16 16" class="socialSvg facebookSvg" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
-              </svg>
-        </a>
-        
-      </div>          
-    <p>&copy; 2023 [Your Name] - All Rights Reserved</p>
-    
-</footer>
-</body>
-</html>
+.gallery:hover {
+	box-shadow: 5px 5px 10px 0px var(--bg-color1);
+}
+  
+.gallery:hover .image {
+	filter: brightness(.8);
+	cursor: pointer;
+}
+
+.gallery .image:hover{
+	overflow: hidden;
+}
+
+.gallery .image img:hover{
+	transform: scale(1.3);
+}
+  
+.gallery:hover .image__info .title {
+	color: #0d627b;
+	
+}
+
+.gallery .image__info .content:hover{
+	cursor: pointer;
+	height: auto;
+}
+
+.gallery .image__info .content p:hover{
+	cursor: pointer;
+	white-space: wrap;
+	min-height: calc(3*1.2em);
+	height: auto;
+}
+
+#full-image-container {
+    display: none;
+    position: fixed;
+	align-items: center;
+	justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.full-image-container{
+	display: flex;
+	position: fixed;
+    width: auto;
+    height: auto;
+	margin: 20%;
+}
+
+#full-image {
+	display: flex;
+	color: var(--text-color3);
+	align-self: center;
+	position: relative;
+	max-width: 600px;
+	max-height: 600px;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#close-button {
+	position: absolute;
+	font-family: "Courier New", monospace;
+	top: 0;
+	right: 0;
+	color: #dddada;
+    cursor: pointer;
+	font-size: 60px;
+	font-weight: 500;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+	opacity: 0.5;
+}
+
+#close-button:hover{
+	color: #dddada;
+	border-radius: 0 0 0 10px;
+	opacity: 1;
+}
+
+  @media only screen and (max-width: 800px) {
+	.portfolio{
+		padding: 10px 20px;
+		background-color: var(--container-bg2);	
+	}
+	
+	.gallery {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 150px;
+		height: 250px;
+		background: var(--bg-color3-1);
+		border-radius: 15px;
+		overflow: hidden;
+		position: relative;
+		color: var(--text-color2);
+		transition: all .5s ease;
+		padding: 10px 5px;
+		margin: 20px 10px;
+	  }
+	  
+	  .gallery .image {
+		display: flex;
+		width: auto;
+		height: 90px;
+		border-radius: 15px;
+		justify-content: center;
+		background-color: var(--bg-color1);
+	}
+	
+	.gallery .image img{
+		height: 70px;
+		width: auto;
+		padding: 10px 20px;
+		align-content: center;
+	}
+	  
+	  .gallery .image .image__info {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: center;
+		padding: 15px;
+		gap: 3px;
+	  }
+	
+	  .gallery .image .title {
+		font-weight: 500;
+		font-size: 12px;
+		color: var(--text-color2);
+	  }
+	  
+	  .gallery .image .content {
+		font-size: 8px;
+	  }
+}
+
+.about_container{
+	display: flex;
+    justify-content: center;
+	flex-direction: column;
+	padding: 110px 20px;
+	background-color: var(--container-bg1);
+	margin: 0 30px;
+	
+}
+
+.about_container .label{
+	display: block;
+}
+
+.about_container .label h1{
+	text-align: center;
+	color: var(--text-color1);
+	border: solid;
+	border-color: var(--bg-color2);
+	border-right: 0;
+	border-left: 0;
+	border-top: 0;
+	padding: 10px;
+	font-size: 34px;
+	text-transform: uppercase;
+}
+
+.about_container h2{
+	text-align: center;
+	color: var(--text-color1);
+	font-size: 26px;
+	text-transform: uppercase;
+	
+}
+
+.about{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-wrap: wrap;
+  	align-items: center;
+	margin: 20px;
+	padding: 40px 20px;
+}
+
+.about .about_image_container{
+	display: flex;
+	width: 260px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.about .about_image_container .image{
+	display: flex;
+	border:solid;
+	border-color: var(--bg-color2);
+	
+}
+
+.about .about_image_container .image .img-size{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	margin: -20px 20px 20px -20px;
+	width: 250px;
+	height: 350px;
+	box-shadow: 0 0 5px rgba(247, 216, 122, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+
+}
+.about .about_image_container .image .img-size img{
+	width: 310px; 
+  	height: auto; 
+}
+
+.about .info_container{
+	max-width: 100%;
+	padding: 20px 40px;
+	margin: 20px 60px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.about .info_container .infoSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px 20px;
+}
+
+.about .info_container .infoSection h2{
+	font-family: helvetica;
+	font-size: 28px;
+	font-weight: 600;
+	color: var(--text-color1);
+	padding: 14px 0px 15px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+
+.about .info_container .infoSection p{
+	color: var(--text-color1);
+	font-size: 24px;
+	line-height: 1.2;
+	text-align: justify;
+	padding-bottom: 8px;
+}
+
+
+.personalInfo{
+	display: flex;
+    flex-wrap: wrap;
+	margin-top: 14px;
+	padding: 25px;
+	border-top: 2px solid var(--bg-color2);
+}
+
+.personalInfo .row{
+	flex: 100%; /* Each row takes up an equal amount of vertical space */
+    display: flex;
+    justify-content: space-between; /* Distribute columns evenly horizontally */
+    margin-bottom: 10px; /* Add margin between rows for spacing */
+}
+
+.personalInfo .column{
+	flex: 1; 
+}
+
+.personalInfo .column p{
+	color: var(--text-color1);
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+
+.edu-bg-container {
+	padding: 10px 20px;
+	border-top: 2px solid var(--bg-color2);
+  }
+
+.skills-container {
+	padding: 10px 20px;
+	border-top: 2px solid var(--bg-color2);
+  }
+  
+.skills-container .skill-box {
+	width: 100%;
+	margin: 25px 0;
+}
+
+.skill-box .title {
+	color: var(--text-color1);
+	font-size: 24px;
+	line-height: 1.2;
+	text-align: justify;
+	padding-bottom: 8px;
+}
+  
+.skill-box .skill-bar {
+	height: 10px;
+	width: 100%;
+	border-radius: 6px;
+	margin-top: 6px;
+	background: rgba(0,0,0,0.1);
+}
+  
+.skill-bar .skill-per {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 90%;
+	border-radius: 6px;
+	background: var(--bg-color2);
+	animation: progress 0.4s ease-in-out forwards;
+	opacity: 0;
+}
+  
+.skill-per.html {
+	width: 80%;
+	animation-delay: 0.1s;
+}
+  
+  .skill-per.css {
+	width: 60%;
+	animation-delay: 0.1s;
+}
+  
+.skill-per.javascript {
+	width: 30%;
+	animation-delay: 0.2s;
+}
+  
+@keyframes progress {
+	0% {
+	  width: 0;
+	  opacity: 1;
+	}
+  
+	100% {
+	  opacity: 1;
+	}
+}
+  
+.skill-per .tooltip {
+	position: absolute;
+	right: -14px;
+	top: -28px;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-color3);
+	padding: 2px 6px;
+	border-radius: 3px;
+	background: var(--bg-color2);
+	z-index: 1;
+}
+  
+.tooltip::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -2px;
+	height: 10px;
+	width: 10px;
+	z-index: -1;
+	background-color: var(--bg-color2);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.contact-container{
+	display: block;
+	max-width: 90%;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--container-bg1);
+	margin: 0 30px;	
+	padding: 110px 20px;
+}
+
+.contact-container .label h1{
+	text-align: center;
+	color: var(--text-color1);
+	border: solid;
+	border-color: var(--bg-color2);
+	border-right: 0;
+	border-left: 0;
+	border-top: 0;
+	padding: 10px;
+	font-size: 34px;
+	text-transform: uppercase;
+}
+
+.form-container {
+	display: flex;	
+	max-height: auto;
+	background-color: var(--bg-color1);
+	margin: 80px 20px;
+	padding: 20px 40px;
+	border-left: 5px solid var(--bg-color3);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.map{
+	width: 100%;
+	height: auto;
+	margin: 20px;
+}
+
+.form{
+	border: 1px solid #0b4851;
+	width: 100%;
+	margin: 20px;
+	padding: 10px 20px;
+	background-color: var(--bg-color2);
+}
+
+.heading {
+	display: block;
+	text-transform: uppercase;
+	color: var(--text-color3);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+  
+.form-container .form .input {
+	color: var(--bg-color1);
+	width: 90%;
+	background-color: var(--bg-color3-1);
+	border: none;
+	outline: none;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	transition: all 0.2s ease-in-out;
+	border-left: 1px solid transparent;
+}
+  
+.form-container .form .input:focus {
+	border-left: 5px solid var(--bg-color1);
+}
+  
+.form-container .form .textarea {
+	width: 90%;
+	padding: 10px;
+	border: none;
+	outline: none;
+	background-color: var(--bg-color3-1);
+	color: var(--text-color1);
+	font-weight: bold;
+	resize: none;
+	max-height: 150px;
+	margin-bottom: 20px;
+	border-left: 1px solid transparent;
+	transition: all 0.2s ease-in-out;
+}
+  
+.form-container .form .textarea:focus {
+	border-left: 5px solid var(--bg-color1);
+}
+  
+.form-container .form .button-container {
+	display: flex;
+	gap: 10px;
+}
+  
+.form-container .form .button-container .send-button {
+	flex-basis: 70%;
+	background: var(--bg-color1);
+	padding: 10px;
+	color: var(--text-color3);
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid transparent;
+	transition: all 0.2s ease-in-out;
+}
+  
+.form-container .form .button-container .send-button:hover {
+	background: var(--bg-color3);
+	border: 1px solid var(--bg-color3-1);
+	color: var(--text-color1);
+}
+  
+.form-container .form .button-container .reset-button-container {
+	filter: drop-shadow(1px 1px 0px #002733);
+	flex-basis: 30%;
+}
+  
+.form-container .form .button-container .reset-button-container .reset-button {
+	position: relative;
+	text-align: center;
+	padding: 10px;
+	color: var(--bg-color3);
+	font-weight: bold;
+	background: var(--bg-color1);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+	transition: all 0.2s ease-in-out;
+}
+  
+  .form-container .form .button-container .reset-button-container .reset-button:hover {
+	background: var(--bg-color3);
+	color: var(--text-color2);
+  }
+
+  .form-container .form .socmed-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  footer{
+	display: flex;
+	height: 20vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+  }
+
+  .social-media {
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 25px 25px;
+	gap: 20px;
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: rgb(44, 44, 44);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transition-duration: .3s;
+  }
+  /* instagram*/
+  .containerOne:hover {
+	background-color: #d62976;
+	transition-duration: .3s;
+  }
+  /* github*/
+  .containerTwo:hover {
+	background-color: #061c25;
+	transition-duration: .3s;
+  }
+  /* facebook*/
+  .containerThree:hover {
+	background-color: #0066ff;
+	transition-duration: .3s;
+  }
+
+  .socialContainer:active {
+	transform: scale(0.9);
+	transition-duration: .3s;
+  }
+  
+  .socialSvg {
+	width: 17px;
+  }
+  
+  .socialSvg path {
+	fill: var(--bg-color3);
+  }
+  
+  .socialContainer:hover .socialSvg {
+	animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+	0% {
+	  transform: translateY(-50px);
+	  opacity: 0;
+	}
+  
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  
