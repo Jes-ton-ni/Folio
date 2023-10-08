@@ -871,3 +871,11 @@ nav a {
 	background: var(--bg-color3);
 	color: var(--text-color2);
   }
+
+  footer{
+	display: flex;
+	height: 20vh;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+  }
