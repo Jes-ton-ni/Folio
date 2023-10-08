@@ -681,7 +681,7 @@ nav a {
 
 .about .about_image_container{
 	display: flex;
-	width: 250px;
+	width: 260px;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
@@ -691,16 +691,24 @@ nav a {
 	display: flex;
 	border:solid;
 	border-color: var(--bg-color2);
+	
 }
 
-.about .about_image_container .image img{
+.about .about_image_container .image .img-size{
+	display: flex;
+	justify-content: center;
 	align-items: center;
 	padding: 15px;
-	width: 250px; 
+	margin: -20px 20px 20px -20px;
+	width: 250px;
+	height: 350px;
+	box-shadow: 0 0 5px rgba(247, 216, 122, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+
+}
+.about .about_image_container .image .img-size img{
+	width: 310px; 
   	height: auto; 
-  	margin-top: -30px;
-	margin-left: -30px;
-	
 }
 
 .about .info_container{
