@@ -535,12 +535,6 @@ nav a {
 	
 }
 
-.gallery .image__info .content:hover{
-	cursor: pointer;
-	height: auto;
-	white-space: wrap;
-}
-
 .gallery .image__info .content p:hover{
 	cursor: pointer;
 	white-space: wrap;
