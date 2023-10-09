@@ -803,6 +803,32 @@ nav a {
 	border-top: 2px solid var(--bg-color2);
   }
 
+.edu-bg{
+	display: flex;
+    flex-wrap: wrap;
+	margin-top: 14px;
+	padding: 25px;
+	border-top: 2px solid var(--bg-color2);
+}
+
+.edu-bg .row{
+	flex: 100%; /* Each row takes up an equal amount of vertical space */
+    display: flex;
+    justify-content: space-between; /* Distribute columns evenly horizontally */
+    margin-bottom: 10px; /* Add margin between rows for spacing */
+}
+
+.edu-bg .column{
+	flex: 1; 
+}
+
+.edu-bg .column p{
+	color: var(--text-color1);
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+
+
 .skills-container {
 	padding: 10px 20px;
 	border-top: 2px solid var(--bg-color2);
@@ -847,12 +873,27 @@ nav a {
   
   .skill-per.css {
 	width: 60%;
-	animation-delay: 0.1s;
+	animation-delay: 0.2s;
 }
   
 .skill-per.javascript {
 	width: 30%;
 	animation-delay: 0.2s;
+}
+
+.skill-per.php {
+	width: 20%;
+	animation-delay: 0.2s;
+}
+
+.skill-per.java {
+	width: 75%;
+	animation-delay: 0.1s;
+}
+
+.skill-per.c {
+	width: 85%;
+	animation-delay: 0.1s;
 }
   
 @keyframes progress {
