@@ -1173,8 +1173,8 @@ nav a {
   /* @Keyframes */
   @keyframes fade-in-left {
 	0% {
-		-webkit-transform: translateX(-100%);
-				transform: translateX(-100%);
+		-webkit-transform: translateX(-250px);
+				transform: translateX(-250px);
 		opacity: 0;
 	}
 	100% {
@@ -1186,8 +1186,8 @@ nav a {
 
 @keyframes fade-in-right {
 	0% {
-		-webkit-transform: translateX(100%);
-				transform: translateX(100%);
+		-webkit-transform: translateX(250px);
+				transform: translateX(250px);
 		opacity: 0;
 	}
 	100% {
