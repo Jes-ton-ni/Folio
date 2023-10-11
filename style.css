@@ -581,76 +581,6 @@ nav a {
 	opacity: 1;
 }
 
-  /* @media only screen and (max-width: 800px) {
-	.portfolio{
-		padding: 10px 20px;
-		background-color: var(--container-bg2);	
-	}
-	
-	.gallery {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 150px;
-		height: 250px;
-		background: var(--bg-color3-1);
-		border-radius: 15px;
-		overflow: hidden;
-		position: relative;
-		color: var(--text-color2);
-		transition: all .5s ease;
-		padding: 10px 5px;
-		margin: 20px 10px;
-	  }
-	  
-	  .gallery .image {
-		display: flex;
-		width: auto;
-		height: 90px;
-		border-radius: 15px;
-		justify-content: center;
-		background-color: var(--bg-color1);
-	}
-	
-	.gallery .image img{
-		height: 70px;
-		width: auto;
-		padding: 10px 20px;
-		align-content: center;
-	}
-	  
-	  .gallery .image .image__info {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		justify-content: center;
-		padding: 15px;
-		gap: 3px;
-	  }
-	
-	  .gallery .image .title {
-		font-weight: 500;
-		font-size: 12px;
-		color: var(--text-color2);
-	  }
-	  
-	  .gallery .image .content {
-		font-size: 8px;
-	  }
-
-	  .gallery .image__info .content:hover{
-		cursor: pointer;
-		height: auto;
-	}
-	
-	.gallery .image__info .content p:hover{
-		cursor: pointer;
-		white-space: wrap;
-		min-height: calc(3*1.2em);
-		height: auto;
-	}
-} */
-
 .about_container{
 	display: flex;
     justify-content: center;
@@ -830,7 +760,13 @@ nav a {
 .skills-container {
 	padding: 10px 20px;
 	border-top: 2px solid var(--bg-color2);
+	padding: 0 75px;
   }
+
+.skills-container .skill-label{
+	display: flex;
+	align-items: center;
+}
   
 .skills-container .skill-box {
 	width: 100%;
@@ -839,7 +775,7 @@ nav a {
 
 .skill-box .title {
 	color: var(--text-color1);
-	font-size: 24px;
+	font-size: 34px;
 	line-height: 1.2;
 	text-align: justify;
 	padding-bottom: 8px;
@@ -1140,7 +1076,7 @@ nav a {
   }
   /* github*/
   .containerTwo:hover {
-	background-color: #061c25;
+	background-color: #329aba;
 	transition-duration: .3s;
   }
   /* facebook*/
