@@ -494,8 +494,10 @@ nav a {
 	overflow: hidden;
 	line-height: 1.2em; /* Set the line-height to match the container */
 	height: calc(3*1.2em);
-	white-space: nowrap;
-    text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .gallery:hover {
@@ -521,6 +523,7 @@ nav a {
 }
 
 .gallery .image__info .content p:hover{
+	display: flex;
 	cursor: pointer;
 	white-space: wrap;
 	min-height: calc(3*1.2em);
