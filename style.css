@@ -488,6 +488,7 @@ nav a {
 	margin: 0; /* Remove default margin */
 	padding: 0; /* Remove default padding */
 	color: var(--text-color1);
+	overflow: hidden;
 }
 
 .gallery .image__info .content p{
