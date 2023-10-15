@@ -258,7 +258,7 @@ nav a {
 	position: absolute;
 	background-color: var(--container-bg1);
 	border-radius: 50%;
-	inset: 5px;
+	inset: 3px;
 }
 
 .image-container{
@@ -570,7 +570,7 @@ nav a {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-	z-index: 1;
+	/* z-index: 1; */
 }
 
 .full-image-container{
