@@ -1,5 +1,5 @@
   // script.js
-const divs = document.querySelectorAll('.gallery-container');
+const divs = document.querySelectorAll('.gallery-content');
 const radios = document.querySelectorAll('input[name="visibility"]');
 
 radios.forEach(radio => {
